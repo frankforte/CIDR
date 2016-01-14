@@ -65,7 +65,6 @@ class CIDR{
 			$pos = strpos($subnet,'*');
 			if($pos !== false)
 			{
-				echo '<h1 style="color:#FF9900">Sub. '.$subnet.'</h1>';
 				$subnet = substr($subnet,0,$pos);
 				$i = 0;
 				$subnet = explode(':',$subnet);
@@ -79,14 +78,12 @@ class CIDR{
 				if(substr($subnet,-1) == ':'){
 					$subnet .= '0';
 				}
-				echo '<h3 style="color:#cc9900">bshort: '.$subnet.'</h3>';
 			}
 			
 			$subnet = self::IPv6_compress($subnet);
 			
 			if($pos !== false)
 			{
-				echo '<h3 style="color:#cc9900">short: '.$subnet.'</h3>';
 				$subnet = explode(':',$subnet);
 				$j = sizeof($subnet);
 				while($j > $size)
@@ -95,7 +92,6 @@ class CIDR{
 					$j--;
 				}
 				$subnet = implode(':',$subnet).'*';
-				echo '<h2 style="color:#cc9900">Sub. '.$subnet.'</h2>';
 			}
 		}
 
@@ -133,8 +129,6 @@ class CIDR{
 			}
 			else
 			{
-				echo '<h2 style="color:green">'.$ip.'<br>';
-				echo ''.$cidr.'</h2><br>';
 				return false;
 			}
 		}
