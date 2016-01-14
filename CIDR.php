@@ -17,8 +17,7 @@ class CIDR{
 	* compare an IPv4 or IPv6 address with a CIDR address or range
 	*
 	* @param  string  $address a valid IPv6 address
-	* @param  string  $subnet a valid IPv6 subnet
-	* @param  string  $mask a valid IPv6 subnet mask
+	* @param  string  $subnet a valid IPv6 subnet[/mask]
 	* @return boolean	whether $address is within the ip range made up  of the subnet and mask
 	*/
     public static function match($ip, $cidr){
@@ -260,6 +259,5 @@ class CIDR{
 		}
 		return strtolower(implode('/',$bits));
 	}
-
 }
 ?>
